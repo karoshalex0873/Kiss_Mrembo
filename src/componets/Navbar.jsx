@@ -36,7 +36,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-white shadow-md">
+    <nav className=" bg-gradient-to-r from-pink-900 to bg-pink-400 shadow-md">
       <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
         <div className="relative flex items-center justify-center h-16">
           <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
