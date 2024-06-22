@@ -21,6 +21,8 @@ const Booking = () => {
   };
 
   return (
+    <>
+    <span id='booking'></span>
     <motion.div
       className="bg-pink-50 py-20"
       initial={{ opacity: 0 }}
@@ -86,6 +88,7 @@ const Booking = () => {
         </form>
       </div>
     </motion.div>
+    </>
   );
 };
 
