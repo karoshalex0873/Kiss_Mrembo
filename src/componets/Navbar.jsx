@@ -17,6 +17,10 @@ const Navbar = () => {
     startAnimation();
   }, []);
 
+  const scrollToSection = (id) => {
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <nav className="bg-white shadow-md">
       <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -35,7 +39,8 @@ const Navbar = () => {
                 {['Home', 'Services', 'Booking', 'About', 'Contact'].map((item, index) => (
                   <motion.a
                     key={item}
-                    href={`/${item.toLowerCase()}`}
+                    href={`#${item.toLowerCase()}`} // Use # and lowercase item name as ID
+                    onClick={() => scrollToSection(item.toLowerCase())}
                     className="text-pink-500 px-3 py-2 rounded-md text-lg font-medium"
                     variants={navVariants}
                   >
