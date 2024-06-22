@@ -51,7 +51,7 @@ const Navbar = () => {
                 Menu
               </button>
             </div>
-            <div className={`absolute right-0 top-0 bg-gradient-to-r from-primary to bg-darkBrand ${isMenuVisible ? 'block' : 'hidden'}`} style={{ zIndex: 50 }}>
+            <div className={`absolute right-0 top-0  ${isMenuVisible ? 'block' : 'hidden'}`} style={{ zIndex: 50 }}>
               <motion.div
                 className="flex flex-col space-y-4 p-4"
                 initial="hidden"
