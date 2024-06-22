@@ -2,7 +2,7 @@ import { motion, useAnimation } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
 const Navbar = () => {
-  const [isMenuVisible, setIsMenuVisible] = useState(false);
+  const [isMenuVisible, setIsMenuVisible] = useState(true); // Always visible on larger devices
   const controls = useAnimation();
 
   const navVariants = {
@@ -36,41 +36,41 @@ const Navbar = () => {
   };
 
   return (
-    <nav className=" bg-gradient-to-r from-pink-900 to bg-pink-400 shadow-md">
+    <nav className="bg-gradient-to-r from-pink-700 to-pink-500 shadow-md">
       <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
-        <div className="relative flex items-center justify-center h-16">
-          <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+        <div className="relative flex items-center justify-between h-16">
+          <div className="flex items-center">
             <div className="flex-shrink-0">
               <h1 className="text-2xl font-bold text-white">Salon</h1>
             </div>
             <div className="sm:hidden">
               <button
                 onClick={handleMenuToggle}
-                className="text-white px-3 py-2 rounded-md text-lg font-medium"
+                className="text-white px-3 py-2 rounded-md text-lg font-medium focus:outline-none"
               >
                 Menu
               </button>
             </div>
-            <div className={`absolute right-0 top-0  ${isMenuVisible ? 'block' : 'hidden'}`} style={{ zIndex: 50 }}>
-              <motion.div
-                className="flex flex-col space-y-4 p-4"
-                initial="hidden"
-                animate={controls}
-                variants={navVariants}
-              >
-                {['Home', 'Services', 'Booking', 'About', 'Contact'].map((item, index) => (
-                  <motion.a
-                    key={item}
-                    href={`#${item.toLowerCase()}`}
-                    onClick={() => scrollToSection(item.toLowerCase())}
-                    className="text-white  bg-gradient-to-r from-pink-700 to to-darkBrand  px-3 py-2 rounded-md text-lg font-medium"
-                    variants={navVariants}
-                  >
-                    {item}
-                  </motion.a>
-                ))}
-              </motion.div>
-            </div>
+          </div>
+          <div className={`absolute top-0 right-0 bg-pink-700 sm:bg-transparent w-full sm:w-auto sm:flex-grow sm:relative sm:flex sm:items-center ${isMenuVisible ? 'block' : 'hidden'}`}>
+            <motion.div
+              className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 p-4"
+              initial="hidden"
+              animate={controls}
+              variants={navVariants}
+            >
+              {['Home', 'Services', 'Booking', 'About', 'Contact'].map((item, index) => (
+                <motion.a
+                  key={item}
+                  href={`#${item.toLowerCase()}`}
+                  onClick={() => scrollToSection(item.toLowerCase())}
+                  className="text-white px-3 py-2 rounded-md text-lg font-medium hover:bg-pink-600 focus:outline-none focus:bg-pink-600"
+                  variants={navVariants}
+                >
+                  {item}
+                </motion.a>
+              ))}
+            </motion.div>
           </div>
         </div>
       </div>
