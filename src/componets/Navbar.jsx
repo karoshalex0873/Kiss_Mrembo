@@ -41,12 +41,12 @@ const Navbar = () => {
         <div className="relative flex items-center justify-center h-16">
           <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex-shrink-0">
-              <h1 className="text-2xl font-bold text-pink-500">Salon</h1>
+              <h1 className="text-2xl font-bold text-white">Salon</h1>
             </div>
             <div className="sm:hidden">
               <button
                 onClick={handleMenuToggle}
-                className="text-pink-500 px-3 py-2 rounded-md text-lg font-medium"
+                className="text-white px-3 py-2 rounded-md text-lg font-medium"
               >
                 Menu
               </button>
