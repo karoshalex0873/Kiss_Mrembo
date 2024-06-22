@@ -83,7 +83,7 @@ const About = () => {
             </div>
           </motion.div>
           <motion.img
-            src="/src/assets/show.jpg"
+            src="/src/assets/images/show.jpg"
             alt="About Us Image"
             className="rounded-lg shadow-lg w-full h-auto"
             variants={itemVariants}

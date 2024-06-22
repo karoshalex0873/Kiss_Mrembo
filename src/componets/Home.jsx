@@ -1,6 +1,6 @@
 // import React from 'react';
 import { motion } from 'framer-motion';
-
+import Hero from  '../assets/video/eye.mp4'
 const Home = () => {
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -31,7 +31,7 @@ const Home = () => {
   return (
     <div className="relative h-screen bg-gradient-to-br from-pink-300 to-pink-500">
       <video autoPlay loop muted className="absolute inset-0 w-full h-full object-cover">
-        <source src="/src/assets/eye.mp4" type="video/mp4" />
+        <source src={Hero} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       <div className="relative z-10 flex flex-col justify-center h-full px-4 sm:px-6 lg:px-8">
