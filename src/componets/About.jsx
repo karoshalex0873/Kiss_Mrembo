@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import myImg from '../assets/images/show.jpg'
 import { useInView } from 'react-intersection-observer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
@@ -83,7 +84,7 @@ const About = () => {
             </div>
           </motion.div>
           <motion.img
-            src="/src/assets/images/show.jpg"
+            src={myImg}
             alt="About Us Image"
             className="rounded-lg shadow-lg w-full h-auto"
             variants={itemVariants}

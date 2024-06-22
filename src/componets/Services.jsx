@@ -1,14 +1,15 @@
 import  { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import secIMg from '../assets/images/show.jpg'
 
 const Services = () => {
   const servicesData = [
-    { name: 'Pedicure', description: 'Complete pedicure services.', price: '1000ksh', image: '/src/assets/show.jpg' },
-    { name: 'Pedicure', description: 'Complete pedicure services.', price: '1000ksh', image: '/src/assets/show.jpg' },
+    { name: 'Pedicure', description: 'Complete pedicure services.', price: '1000ksh', image:secIMg },
+    { name: 'Pedicure', description: 'Complete pedicure services.', price: '1000ksh', image:secIMg},
 
-    { name: 'Pedicure', description: 'Complete pedicure services.', price: '1000 ksh', image: '/src/assets/show.jpg' },
-    { name: 'Pedicure', description: 'Complete pedicure services.', price: '1200 ksh', image: '/src/assets/show.jpg' },
+    { name: 'Pedicure', description: 'Complete pedicure services.', price: '1000 ksh', image: secIMg },
+    { name: 'Pedicure', description: 'Complete pedicure services.', price: '1200 ksh', image:secIMg },
   ];
 
   const controlsArray = servicesData.map(() => useAnimation());
