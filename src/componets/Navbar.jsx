@@ -16,11 +16,19 @@ const Navbar = () => {
   useEffect(() => {
     startAnimation();
   }, []);
-
   const scrollToSection = (id) => {
-    document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest', duration: 500 });
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+        inline: 'nearest',
+        easing: 'ease-out', // Set easing to ease-out
+        duration: 500,
+      });
+    }
   };
-
+  
   return (
     <nav className="bg-white shadow-md">
       <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
