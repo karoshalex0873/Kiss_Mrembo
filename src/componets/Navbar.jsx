@@ -18,14 +18,9 @@ const Navbar = () => {
     startAnimation();
   }, []);
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMenuVisible(window.innerWidth <= 768); // Adjust the breakpoint as needed
-    };
-    handleResize(); // Initial check
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  const handleMenuToggle = () => {
+    setIsMenuVisible(!isMenuVisible);
+  };
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
@@ -50,15 +45,15 @@ const Navbar = () => {
             </div>
             <div className="sm:hidden">
               <button
-                onClick={() => setIsMenuVisible(!isMenuVisible)}
+                onClick={handleMenuToggle}
                 className="text-pink-500 px-3 py-2 rounded-md text-lg font-medium"
               >
                 Menu
               </button>
             </div>
-            <div className={`hidden sm:flex sm:ml-6 ${isMenuVisible ? 'block' : 'hidden'}`}>
+            <div className={`absolute right-0 top-0 bg-white ${isMenuVisible ? 'block' : 'hidden'}`} style={{ zIndex: 50 }}>
               <motion.div
-                className="flex flex-col space-y-4"
+                className="flex flex-col space-y-4 p-4"
                 initial="hidden"
                 animate={controls}
                 variants={navVariants}
@@ -68,7 +63,7 @@ const Navbar = () => {
                     key={item}
                     href={`#${item.toLowerCase()}`}
                     onClick={() => scrollToSection(item.toLowerCase())}
-                    className="text-pink-500 px-3 py-2 rounded-md text-lg font-medium"
+                    className="text-white px-3 py-2 rounded-md text-lg font-medium"
                     variants={navVariants}
                   >
                     {item}
