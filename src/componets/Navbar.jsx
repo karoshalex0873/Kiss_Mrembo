@@ -63,7 +63,7 @@ const Navbar = () => {
                     key={item}
                     href={`#${item.toLowerCase()}`}
                     onClick={() => scrollToSection(item.toLowerCase())}
-                    className="text-white px-3 py-2 rounded-md text-lg font-medium"
+                    className="text-white  bg-gradient-to-r from-pink-700 to to-darkBrand  px-3 py-2 rounded-md text-lg font-medium"
                     variants={navVariants}
                   >
                     {item}
