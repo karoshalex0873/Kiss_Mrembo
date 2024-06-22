@@ -28,6 +28,8 @@ const About = () => {
   });
 
   return (
+    <>
+    <span id='about'></span>
     <motion.div
       className="bg-white py-20"
       variants={containerVariants}
@@ -92,6 +94,8 @@ const About = () => {
         </div>
       </div>
     </motion.div>
+    </>
+    
   );
 };
 
